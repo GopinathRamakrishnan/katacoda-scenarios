@@ -1,5 +1,3 @@
->Helm uses a packaging format called charts.
->A chart is a collection of files that describe a related set of Kubernetes resources.
 
 ## Chart
 
@@ -24,3 +22,5 @@ templates/          # A directory of templates that, when combined with values,
                     # will generate valid Kubernetes manifest files.
 templates/NOTES.txt # OPTIONAL: A plain text file containing short usage notes
 ```
+
+[Helm Docs](https://helm.sh/docs/topics/charts/)

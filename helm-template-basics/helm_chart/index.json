@@ -2,19 +2,19 @@
   "title": "Helm Chart Overview",
   "description": "This scenario will talk about helm chart structure",
   "difficulty": "Beginner",
-  "time": "5 minutes",
+  "time": "3 minutes",
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Step 1 - Helm Chart Structure",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Step 2 - Templates and Values",
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Step 3 - Helm Chart Packaging",
         "text": "step3.md"
       }
     ],
