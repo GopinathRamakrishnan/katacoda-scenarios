@@ -1,5 +1,4 @@
 
-## Chart
 
 - Let's create a chart to review the structure and tokenize further.
 
