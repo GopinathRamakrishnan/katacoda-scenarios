@@ -2,29 +2,35 @@
 
 [Go Template Language](https://golang.org/pkg/text/template/)
 
-[Sprig Library](https://github.com/Masterminds/sprig)
+[Sprig Functions](https://masterminds.github.io/sprig/)
 
 [Specialized Functions](https://helm.sh/docs/howto/charts_tips_and_tricks/)
 
-- Quote Function
+# Functions
 `- name: {{ quote .Chart.Name }}`{{copy}}
 
-- Pipelines
+`- name: {{ upper .Chart.Name }}`{{copy}}
+
+
+# Pipelines
 >way of getting several things done in sequence
 
 `- name: {{ .Chart.Name | upper | quote }}`{{copy}}
 
 `- name: {{ .Chart.Name | default "KF-Chart" | quote }}`{{copy}}
 
-[See More](https://helm.sh/docs/chart_template_guide/functions_and_pipelines/)
+[See More About Functions](https://helm.sh/docs/chart_template_guide/functions_and_pipelines/)
 
-- Function Controls
-1. if / else
-2. range - for each
+# Function Controls
+>>Provides ability to control the flow of a template's generation.
+
+1. if/else for creating conditional blocks
+2. with to specify a scope
+3. range, which provides a "for each"-style loop
 
 `touch kingfisher-chart/templates/configmap.yaml`{{execute}}
 
-Custom Values file `kingfisher-chart/templates/configmap.yaml`{{open}}
+ConfigMap file `kingfisher-chart/templates/configmap.yaml`{{open}}
 
 <pre class="file" data-filename="configmap.yaml" data-target="replace">
 apiVersion: v1
@@ -38,14 +44,16 @@ data:
   {{ end }}
 </pre>
 
+Custom Values file `kf-custom-values.yaml`{{open}}
+
 
 Package
 `helm package kingfisher-chart`{{execute}}
 
 Dry Run
 `helm install kingfisher-chart-0.1.0.tgz --name kingfisher -f kf-cusom-values.yaml --dry-run --debug `{{execute}}
-- Controlling Spaces
 
+- Controlling Spaces
 >> {{- (with the dash and space added) indicates that whitespace should be chomped left, while -}} means whitespace to the right should be consumed
 
 <pre class="file" data-filename="configmap.yaml" data-target="replace">
@@ -55,9 +63,9 @@ metadata:
   name: {{ .Release.Name }}-configmap
 data:
   envType: {{ .Values.config.envType | default "QA" | upper | quote }}
-  {{ if eq .Values.config.envType "QA" }}
+  {{- if eq .Values.config.envType "QA" }}
   sizeLimit: 1Gi
-  {{ end }}
+  {{- end }}
 </pre>
 
 Package
