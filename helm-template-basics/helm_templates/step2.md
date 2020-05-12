@@ -4,10 +4,10 @@ Values file `kingfisher-chart/values.yaml`{{open}}
 
 - Order of specificity.
 
-The values.yaml file in the chart
-###### If this is a subchart, the values.yaml file of a parent chart
-##### A values file if passed into helm install or helm upgrade with the -f flag
-#### Individual parameters passed with --set
+1. The values.yaml file in the chart
+2. ###### If this is a subchart, the values.yaml file of a parent chart
+3. ##### A values file if passed into helm install or helm upgrade with the -f flag
+4. #### Individual parameters passed with --set
 
 - Create Custom Values File
 `touch kf-custom-values.yaml`{{execute}}
@@ -24,6 +24,9 @@ resources:
 </pre>
 
 - Let's test the priority
+
+`helm init`{{execute}}
+
 `helm package kingfisher-chart`{{execute}}
 
 `helm install kingfisher-chart-0.1.0.tgz --name kingfisher --set replicaCount=3 --dry-run --debug `{{execute}}
