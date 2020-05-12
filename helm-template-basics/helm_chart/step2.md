@@ -4,7 +4,7 @@
 
 [Go Template Language](https://golang.org/pkg/text/template/)
 
-[Spring Library](https://github.com/Masterminds/sprig)
+[Sprig Library](https://github.com/Masterminds/sprig)
 
 [Specialized Functions](https://helm.sh/docs/howto/charts_tips_and_tricks/)
 
@@ -13,3 +13,5 @@ Let's take a look at one of the template files
 Deployment template file `kingfisher-chart/templates/deployment.yaml`{{open}}
 
 Values file `kingfisher-chart/values.yaml`{{open}}
+
+>When Helm renders the charts, it will pass every file in the templates directory through the template engine, with the supplied values.
