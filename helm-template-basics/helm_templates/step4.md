@@ -14,7 +14,7 @@
 
  - template Function
 
-`name: {{ template "kingfisher-chart.fullname" . }}-deployment`{{copy}}
+ `name: {{ template "kingfisher-chart.fullname" . }}-deployment`{{copy}}
 
  - include Function
 
@@ -22,7 +22,3 @@
 
 
 - Scope should be passed to named templates
-
-
-
->

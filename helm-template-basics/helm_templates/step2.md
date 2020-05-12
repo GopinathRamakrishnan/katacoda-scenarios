@@ -30,7 +30,7 @@ resources:
 `helm init`{{execute}}
 
 Package
- `helm package kingfisher-chart`{{execute}}
+`helm package kingfisher-chart`{{execute}}
 
 Dry Run
 `helm install kingfisher-chart-0.1.0.tgz --name kingfisher -f kf-cusom-values.yaml --set replicaCount=3 --dry-run --debug `{{execute}}
