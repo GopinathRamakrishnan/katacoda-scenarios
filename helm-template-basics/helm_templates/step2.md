@@ -26,4 +26,4 @@ resources:
 - Let's test the priority
 `helm package kingfisher-chart`{{execute}}
 
-`helm install kingfisher-chart-0.1.0.tgz --name kingfisher --dry-run --debug `{{execute}}
+`helm install kingfisher-chart-0.1.0.tgz --name kingfisher --set replicaCount=3 --dry-run --debug `{{execute}}
