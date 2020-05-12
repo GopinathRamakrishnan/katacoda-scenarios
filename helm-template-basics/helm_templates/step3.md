@@ -11,6 +11,10 @@
 
 `- name: {{ upper .Chart.Name }}`{{copy}}
 
+`- name: {{ required "replicaCount is required!" .Chart.Name }}`{{copy}}
+
+{{ required "A valid foo is required!" .Values.foo }}
+
 # Pipelines
 >way of getting several things done in sequence
 
@@ -49,6 +53,8 @@ Custom Values file `kf-custom-values.yaml`{{open}}
 
 config:
   envType: "qa"
+  sizeLimit: 1Gi
+  cpu: 200m
 </pre>
 
 
@@ -58,8 +64,9 @@ Package
 Dry Run
 `helm install kingfisher-chart-0.1.0.tgz --name kingfisher -f kf-cusom-values.yaml --dry-run --debug `{{execute}}
 
-- Controlling Spaces
+- Controlling Spaces and Scope
 > {{- (with the dash and space added) indicates that whitespace should be chomped left, while -}} means whitespace to the right should be consumed
+> Scope can be controlled using with and range
 
 <pre class="file" data-filename="configmap.yaml" data-target="replace">
 apiVersion: v1
@@ -69,7 +76,10 @@ metadata:
 data:
   envType: {{ .Values.config.envType | default "QA" | upper | quote }}
   {{- if eq .Values.config.envType "QA" }}
-  sizeLimit: 1Gi
+  sizeLimit: {{ .Values.config.sizeLimit }}
+  {{- end }}
+  {{- with .Values.config }}
+  cpu: {{ .cpu }}
   {{- end }}
 </pre>
 

@@ -9,7 +9,7 @@
     },
     {
       "course_id": "helm_templates",
-      "title": "{{ Templates }}",
+      "title": "Helm {{ Templates }}",
       "description": "This scenario will talk about templatizing the helm charts"
     }
   ]
