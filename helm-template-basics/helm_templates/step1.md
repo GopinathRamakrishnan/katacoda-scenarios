@@ -4,8 +4,6 @@
 
 Deployment template file `kingfisher-chart/templates/deployment.yaml`{{open}}
 
-Values file `kingfisher-chart/values.yaml`{{open}}
-
 A template directive is enclosed in {{ and }} blocks
 
 Values are namespaced objects seperated by (.)
@@ -21,4 +19,4 @@ The leading dot indicates that we start with the top-most namespace for this sco
 | Chart         | The contents of the Chart.yaml                                        |
 | Files         | Non special files present inside the chart                            |
 | Capabilities  | Provides information about what capabilities the K8s cluster supports |
-|Template       | Contains information about the current template                       |
+| Template      | Contains information about the current template                       

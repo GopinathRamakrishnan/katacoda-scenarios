@@ -6,11 +6,11 @@
   "details": {
     "steps": [
       {
-        "title": "Step 1 - {{ Templates }}",
+        "title": "Step 1 - Templates",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Step 2 - Values",
         "text": "step2.md"
       },
       {
