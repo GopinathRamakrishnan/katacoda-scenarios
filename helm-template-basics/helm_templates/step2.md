@@ -12,6 +12,8 @@ Values file `kingfisher-chart/values.yaml`{{open}}
 - Create Custom Values File
 `touch kf-custom-values.yaml`{{execute}}
 
+Custom Values file `kf-custom-values.yaml`{{open}}
+
 <pre class="file" data-filename="kf-custom-values.yaml" data-target="replace">
 replicaCount: 2
 resources:
@@ -27,6 +29,8 @@ resources:
 
 `helm init`{{execute}}
 
-`helm package kingfisher-chart`{{execute}}
+Package
+ `helm package kingfisher-chart`{{execute}}
 
-`helm install kingfisher-chart-0.1.0.tgz --name kingfisher --set replicaCount=3 --dry-run --debug `{{execute}}
+Dry Run
+`helm install kingfisher-chart-0.1.0.tgz --name kingfisher -f kf-cusom-values.yaml --set replicaCount=3 --dry-run --debug `{{execute}}

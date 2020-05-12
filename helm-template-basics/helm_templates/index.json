@@ -1,8 +1,8 @@
 {
-  "title": "{{ Templates }}",
+  "title": "Helm {{ Templates }}",
   "description": "This scenario will talk about templatizing the helm charts",
   "difficulty": "Beginner",
-  "time": "10",
+  "time": "20",
   "details": {
     "steps": [
       {
@@ -14,7 +14,7 @@
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Step 3 - Functions and Controls",
         "text": "step3.md"
       }
     ],
