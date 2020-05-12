@@ -6,6 +6,11 @@
       "course_id": "helm_chart",
       "title": "Helm Chart Overview",
       "description": "This scenario will talk about helm chart structure"
+    },
+    {
+      "course_id": "helm_templates",
+      "title": "{{ Templates }}",
+      "description": "This scenario will talk about templatizing the helm charts"
     }
   ]
 }
