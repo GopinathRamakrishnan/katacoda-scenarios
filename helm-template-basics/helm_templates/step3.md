@@ -13,8 +13,6 @@
 
 `- name: {{ required "replicaCount is required!" .Chart.Name }}`{{copy}}
 
-{{ required "A valid foo is required!" .Values.foo }}
-
 # Pipelines
 >way of getting several things done in sequence
 
@@ -44,6 +42,9 @@ data:
   envType: {{ .Values.config.envType | default "QA" | upper | quote }}
   {{ if eq .Values.config.envType "qa" }}
   sizeLimit: 1Gi
+  {{ end }}
+  {{ with .Values.config }}
+  cpu: {{ .cpu }}
   {{ end }}
 </pre>
 
@@ -89,4 +90,4 @@ Package
  `helm package kingfisher-chart`{{execute}}
 
 Dry Run
-`helm install kingfisher-chart-0.1.0.tgz --name kingfisher -f kf-cusom-values.yaml --dry-run --debug `{{execute}}
+`helm install kingfisher-chart-0.1.0.tgz --name kingfisher -f kf-custom-values.yaml --dry-run --debug `{{execute}}

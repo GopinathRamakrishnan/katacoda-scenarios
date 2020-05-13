@@ -1,4 +1,3 @@
-# Named Templates
 
 ```
 {{ define "MY.NAME" }}
