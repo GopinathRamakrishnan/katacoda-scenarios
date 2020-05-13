@@ -24,7 +24,7 @@
 
 [See More About Functions](https://helm.sh/docs/chart_template_guide/functions_and_pipelines/)
 
-# Function Controls
+# Flow Controls
 >Provides ability to control the flow of a template's generation.
 
 1. if/else for creating conditional blocks
@@ -62,11 +62,13 @@ Package
 `helm package kingfisher-chart`{{execute}}
 
 Dry Run
-`helm install kingfisher-chart-0.1.0.tgz --name kingfisher -f kf-cusom-values.yaml --dry-run --debug `{{execute}}
+`helm install kingfisher-chart-0.1.0.tgz --name kingfisher -f kf-custom-values.yaml --dry-run --debug `{{execute}}
 
 - Controlling Spaces and Scope
 > {{- (with the dash and space added) indicates that whitespace should be chomped left, while -}} means whitespace to the right should be consumed
 > Scope can be controlled using with and range
+
+ConfigMap file `kingfisher-chart/templates/configmap.yaml`{{open}}
 
 <pre class="file" data-filename="configmap.yaml" data-target="replace">
 apiVersion: v1
