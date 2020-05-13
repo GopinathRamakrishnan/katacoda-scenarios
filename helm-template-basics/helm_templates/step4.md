@@ -19,5 +19,4 @@
 
  `name: {{ include "kingfisher-chart.fullname" . | indent 2 }}`{{copy}}
 
-
 - Scope should be passed to named templates
